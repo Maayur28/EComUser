@@ -45,7 +45,7 @@ routes.post("/forgetpassword", async (req, res, next) => {
         from: "shoeapp28@gmail.com",
         to: tosend,
         subject: "Reset your password",
-        html: `<h2>Hi <b>${check.firstname} ${check.lastname}</b>,</h2><p>Please click on the link below to reset your password (valid only for 10 minutes)<br><a href=https://mayur28.herokuapp.com/reset/${token}>CLICK ME</a><p>If this doesn't work please try to copy paste the link in your browser given below </p><br><a href=https://mayur28.herokuapp.com/reset/${token}>https://mayur28.herokuapp.com/reset/${token}</a>`,
+        html: `<h2>Hi <b>${check.firstname} ${check.lastname}</b>,</h2><p>Please click on the button below to reset your password (valid only for 10 minutes)<br><br><a href=https://mayur28.herokuapp.com/reset/${token} style="margin-top:10px;color:white;background-color:rgba(254, 77, 1, 255);padding:10px 20px;border-radius:50px;text-decoration:none ">CLICK ME</a><p>If this doesn't work please try to copy and paste the link in your browser given below </p><br><a href=https://mayur28.herokuapp.com/reset/${token}>https://mayur28.herokuapp.com/reset/${token}</a>`,
       };
       transport.sendMail(message,(error, info) => {
         if (error) {
